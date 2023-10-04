@@ -60,7 +60,7 @@ const ExpertisePage = () => {
         <ArrayCompetences data={data} />
       </Grid>
       <Grid item>
-        <img src={srcImg} style={{opacity: '0.2', marginTop: '-50px', marginLeft: '50px', width: '90%'}}/>
+        <img src={srcImg} style={{opacity: '0.2', marginTop: '-50px', marginLeft: '50px', width: '90%'}} alt='ImageCode'/>
       </Grid>
     </Grid>
   );

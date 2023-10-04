@@ -1,5 +1,7 @@
 import { Grid } from '@mui/material';
 import { useEffect, useState } from 'react';
+import '../Styles/ScrollDownIndicator.css';
+import { competencesLogo } from '../Datas/Datas.js';
 
 const textTitle = {
   fontSize: '100px',
@@ -120,26 +122,117 @@ const FilterProjects = ({ datas, sectionSelected, setSectionSelected }) => {
     </Grid>
   );
 }
-const Project = ({ data }) => { // à continuer
+
+const Project = ({ data, projectSelected }) => {
+
+  const [isMouseOnShowProject, setIsMouseOnShowProject] = useState(false);
+
+  const titleStyle = {
+    color: "white",
+    fontSize: "20px",
+    marginBottom: "5px",
+    lineHeight: "1.1",
+    fontFamily: "ArabotoBold"
+  };
+
+  const typeStyle = {
+    color: "#efefef",
+    fontSize: "17px",
+    marginBottom: "5px",
+    lineHeight: "1.1",
+    fontFamily: "ArabotoLight"
+  };
+
+  const showProjectStyle = {
+    color: isMouseOnShowProject ? "#66d9ed" : "#efefef",
+    fontSize: "17px",
+    marginBottom: "5px",
+    lineHeight: "1.1",
+    fontFamily: "ArabotoLight"
+  };
+
   return (
-    <Grid container direction='column'>
+    <Grid container direction='column' style={{width: "380px" }}>
       <Grid item>
-        <span>
-          {data.title}
-        </span>
+        <img
+          src={data.imageSrc}
+          style={{ borderRadius: '7px', width: "380px", height: '285px', cursor: 'pointer' }}
+          alt="ImageProject"
+        />
+      </Grid>
+      <Grid container direction='column'
+        style={{
+          padding: '30px',
+          paddingBottom: '10px',
+          marginTop: '-7px',
+          borderBottomLeftRadius: '5px',
+          borderBottomRightRadius: '5px',
+          backgroundColor: "#262626"}}>
+        <Grid item style={{ marginBottom: '-2px', width: '100%', overflow: "hidden", textOverflow: "ellipsis", whiteSpace: "nowrap", color: "#efefef", fontSize: "17px"  }}>
+          <span style={titleStyle}>
+            {data.title}
+          </span>
+        </Grid>
+        { projectSelected !== data.title ? (
+          <Grid item>
+          <span style={typeStyle}>
+            {data.categorie}
+          </span>
+        </Grid>
+        ) : (
+          <Grid container direction='row' style={{alignItems: 'center'}}>
+
+            <Grid item
+              style={{
+                paddingRight: '10px',
+                cursor: 'pointer'}}
+                onMouseEnter={() => setIsMouseOnShowProject(true)}
+                onMouseLeave={() => setIsMouseOnShowProject(false)}
+                onClick={() => window.open(data.link, '_blank')}>
+              <span style={showProjectStyle}>
+                Show project
+              </span>
+            </Grid>
+            <Grid item style={{color: 'grey', backgroundColor: 'grey', width: '50px', height: '2px', marginTop: '4px'}}/>
+          </Grid>
+        )}
+       <Grid container direction='row' style={{paddingTop: '10px'}}>
+          {data.langages.map((langage, index) => {
+
+            const langageObjet = competencesLogo.find(item => item.langage === langage);
+
+            return (
+              <Grid item key={index}
+                style={{
+                  paddingRight: index === data.langages.length ? '0px' : '10px'
+                }}>
+                  <img
+                    src={langageObjet ? langageObjet.logo : ''}
+                    style={{ width: "40px", height: '40px', borderRadius: '50%' }}
+                    alt="ImageCompetence"
+                  />
+              </Grid>
+            );
+          })}
+        </Grid>
+
       </Grid>
     </Grid>
   );
 }
 
-const ProjectsList = ({ datas, sectionSelected, setSectionSelected }) => {
+
+
+const ProjectsList = ({ datas, sectionSelected }) => {
 
   const [projectsDatas, setProjectsDatas] = useState([]);
+  const [projectSelected, setProjectSelected] = useState("");
   
   useEffect(() => {
     const tmpProjects = getProjectsData(sectionSelected);
+    
     setProjectsDatas(tmpProjects);
-  }, [sectionSelected]);
+  }, [sectionSelected, projectsDatas]);
 
   const getProjectsData = (categorie) => {
     if (categorie === 'all')
@@ -156,8 +249,11 @@ const ProjectsList = ({ datas, sectionSelected, setSectionSelected }) => {
   return (
     <Grid container direction='row'>
       {projectsDatas.map((projectData, index) => (
-        <Grid item key={index}>
-          <Project data={projectData} />
+        <Grid item key={index}
+          onMouseEnter={() => setProjectSelected(projectData.title)}
+          onMouseLeave={() => setProjectSelected("")}
+          style={{paddingRight: index === projectsDatas.length ? '0px' : '36px', paddingBottom: '40px'}}>
+          <Project data={projectData} projectSelected={projectSelected} />
         </Grid>
       ))}
     </Grid>
@@ -173,18 +269,18 @@ const WorkPage = ({ datas }) => {
     <Grid container
       direction='column'
       id='workPage'
-      style={{ border: '1px solid red', width: '100%', maxWidth: '1200px', margin: '0 auto' }}>
+      style={{width: '100%', maxWidth: '1250px', margin: '0 auto' }}>
       <Grid item>
         <Grid>
           <Title title1='My' title2='Works' />
         </Grid>
       </Grid>
 
-      <Grid item>
+      <Grid item style={{paddingBottom: '40px'}}>
         <FilterProjects datas={datas} sectionSelected={sectionSelected} setSectionSelected={setSectionSelected} />
       </Grid>
       <Grid item>
-        <ProjectsList datas={datas} sectionSelected={sectionSelected} setSectionSelected={setSectionSelected} />
+        <ProjectsList datas={datas} sectionSelected={sectionSelected} />
       </Grid>
     </Grid>
   );
