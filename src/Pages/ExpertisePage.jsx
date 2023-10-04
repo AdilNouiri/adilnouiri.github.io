@@ -47,7 +47,7 @@ const ExpertisePage = () => {
   return (
     <Grid container
       direction='column'
-      id='expertisePage'
+      id='expertise'
       style={{
         alignItems: 'center',
       }}>

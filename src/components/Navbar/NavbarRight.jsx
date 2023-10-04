@@ -54,22 +54,22 @@ const NavbarRight = () => {
   return (
     <Grid container direction='row' >
       <Grid item>
-        <NavbarSection id='#homePage' text='// home' num='01' hovered={hovered} setHovered={setHovered} />
+        <NavbarSection id='#home' text='// home' num='01' hovered={hovered} setHovered={setHovered} />
       </Grid>
       <Grid item>
-        <NavbarSection id='#aboutMePage' text='// about me' num='02' hovered={hovered} setHovered={setHovered} />
+        <NavbarSection id='#about me' text='// about me' num='02' hovered={hovered} setHovered={setHovered} />
       </Grid>
       <Grid item>
-        <NavbarSection id='#expertisePage' text='// expertise' num='03' hovered={hovered} setHovered={setHovered} />
+        <NavbarSection id='#expertise' text='// expertise' num='03' hovered={hovered} setHovered={setHovered} />
       </Grid>
       <Grid item>
-        <NavbarSection id='#workPage' text='// work' num='04' hovered={hovered} setHovered={setHovered} />
+        <NavbarSection id='#work' text='// work' num='04' hovered={hovered} setHovered={setHovered} />
       </Grid>
       <Grid item>
-        <NavbarSection id='#experiencePage' text='// experience' num='05' hovered={hovered} setHovered={setHovered} />
+        <NavbarSection id='#experience' text='// experience' num='05' hovered={hovered} setHovered={setHovered} />
       </Grid>
       <Grid item>
-        <NavbarSection id='#contactPage' text='// contact' num='06' hovered={hovered} setHovered={setHovered} />
+        <NavbarSection id='#contact' text='// contact' num='06' hovered={hovered} setHovered={setHovered} />
       </Grid>
     </Grid>
   );

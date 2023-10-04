@@ -13,7 +13,7 @@ const Home = () => {
       {isOpenMenu && (
         <SideNavbar setIsOpenMenu={setIsOpenMenu} />
       )}
-      <Grid id='homePage' container direction='column' style={{ height: '100vh' }}>
+      <Grid id='home' container direction='column' style={{ height: '100vh' }}>
         <Grid item>
           <Navbar isOpenMenu={isOpenMenu} setIsOpenMenu={setIsOpenMenu} />
         </Grid>

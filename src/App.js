@@ -8,7 +8,7 @@ import { workDatas } from './Datas/Datas.js';
 const App = () => {
 
   return (
-    <Grid container direction='column' style={{ paddingLeft: '15px', paddingRight: '15px' }}>
+    <Grid container direction='column' style={{ paddingLeft: '20px', paddingRight: '15px' }}>
       <Grid item >
         <Home />
       </Grid>

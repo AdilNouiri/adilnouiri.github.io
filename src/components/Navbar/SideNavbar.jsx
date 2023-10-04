@@ -1,6 +1,7 @@
 import { Grid } from '@mui/material';
 import CloseIcon from '@mui/icons-material/Close';
 import { useState } from 'react';
+import ScrollToComponent from '../../Utils/ScrollToComponent';
 
 const LeftSide = ({ closeSideNavbar}) => {
 
@@ -31,6 +32,15 @@ const LeftSide = ({ closeSideNavbar}) => {
     color: 'black',
   };
 
+  const navigateOnClick = (section) => {
+    const sectionName = "#" + section.replace(/\//g, "").trim();
+
+      closeSideNavbar();
+      setTimeout(() => {
+        ScrollToComponent(sectionName);
+      }, 500);
+  };
+  
 
   return (
     <Grid
@@ -66,7 +76,7 @@ const LeftSide = ({ closeSideNavbar}) => {
       </Grid>
       {
         sectionNames.map((section, index) => (
-          <Grid item key={index}>
+          <Grid item key={index} onClick={() => navigateOnClick(section)}>
             <span style={sectionNameStyle}>{section}</span>
           </Grid>
         ))

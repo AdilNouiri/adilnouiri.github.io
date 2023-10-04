@@ -268,7 +268,7 @@ const WorkPage = ({ datas }) => {
   return (
     <Grid container
       direction='column'
-      id='workPage'
+      id='work'
       style={{width: '100%', maxWidth: '1250px', margin: '0 auto' }}>
       <Grid item>
         <Grid>
