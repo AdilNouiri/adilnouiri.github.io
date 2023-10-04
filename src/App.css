@@ -1,0 +1,77 @@
+.App {
+  text-align: center;
+}
+
+@media (prefers-reduced-motion: no-preference) {
+  .App-logo {
+    animation: App-logo-spin infinite 20s linear;
+  }
+}
+
+.App-header {
+  background-color: #282c34;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  font-size: calc(10px + 2vmin);
+  color: white;
+}
+
+.App-link {
+  color: #61dafb;
+}
+
+@keyframes App-logo-spin {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+@font-face {
+  font-family: "ArabotoLight";
+  src: local("ArabotoLight"),
+    url("./Assets/Fonts/Araboto/ArabotoLight.ttf") format("truetype");
+}
+
+@font-face {
+  font-family: "ArabotoBold";
+  src: local("ArabotoBold"),
+    url("./Assets/Fonts/Araboto/ArabotoBold.ttf") format("truetype");
+}
+
+@font-face {
+  font-family: "ArabotoMedium";
+  src: local("ArabotoMedium"),
+    url("./Assets/Fonts/Araboto/ArabotoMedium.ttf") format("truetype");
+}
+
+@font-face {
+  font-family: "ArabotoNormal";
+  src: local("ArabotoNormal"),
+    url("./Assets/Fonts/Araboto/ArabotoNormal.ttf") format("truetype");
+}
+
+@font-face {
+  font-family: "ArabotoThin";
+  src: local("ArabotoThin"),
+    url("./Assets/Fonts/Araboto/ArabotoThin.ttf") format("truetype");
+}
+
+/* ------------ */
+
+@font-face {
+  font-family: "Poppins-Medium";
+  src: local("Poppins-Medium"),
+    url("./Assets/Fonts/Poppins/Poppins-Medium.ttf") format("truetype");
+}
+
+@font-face {
+  font-family: "Poppins-Bold";
+  src: local("Poppins-Bold"),
+    url("./Assets/Fonts/Poppins/Poppins-Bold.ttf") format("truetype");
+}
