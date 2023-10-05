@@ -4,6 +4,7 @@ import Home from './Pages/Home';
 import ExpertisePage from './Pages/ExpertisePage';
 import WorkPage from './Pages/WorkPage';
 import { workDatas } from './Datas/Datas.js';
+import ExperiencePage from './Pages/ExperiencePage';
 
 const App = () => {
 
@@ -17,6 +18,12 @@ const App = () => {
       </Grid>
       <Grid item style={{ paddingTop: '200px' }}>
         <WorkPage datas={workDatas} />
+      </Grid>
+      <Grid item style={{ paddingTop: '125px', width: '100%' }}>
+        <ExperiencePage />
+      </Grid>
+      <Grid item style={{ paddingTop: '125px', width: '100%' }}>
+
       </Grid>
     </Grid>
   );

@@ -49,7 +49,7 @@ const Description = () => {
         </h5>
       </Grid>
       <Grid item
-        onClick={() => { ScrollToComponent('#expertisePage') }}
+        onClick={() => { ScrollToComponent('#expertise') }}
         style={{ position: 'absolute', bottom: '70px', cursor: 'pointer' }}>
         <div className="button scroll">
           <span className="scroll-down-arrow"></span>

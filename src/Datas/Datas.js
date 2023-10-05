@@ -63,3 +63,54 @@ export const workDatas = [
     }
   ];
   
+export const dataExpertise = [
+    {
+      title1: 'Software',
+      title2: 'Development',
+      bandColor: '#9b51e0',
+      bandSize: '110px',
+      description: 'Experienced in both functional and OOP: JavaScript, TypeScript, C, C++, Haskell, Python.',
+      type: 'computer'
+    },
+    {
+      title1: 'Frontend Dev',
+      title2: 'React, Angular',
+      bandColor: '#2c3599',
+      bandSize: '160px',
+      description: 'Passionate about UI/UX. Over 2 years of development experience in HTML, CSS, JS, Redux, React and Angular frameworks.',
+      type: 'web'
+    },
+    {
+      title1: 'React Native Dev',
+      title2: 'Android, iOS',
+      bandColor: '#ff6900',
+      bandSize: '198px',
+      description: 'Skilled in developing hybrid mobile apps and cross-platform solutions using the React Native framework.',
+      type: 'mobile'
+    }
+  ]
+
+export const dataExperience = [
+  {
+    post: "Front-end web/mobile Developer",
+    company: "Certipair",
+    date: "2022",
+    localisation: "remote",
+    companyLink: 'https://www.certipair.fr/',
+    companyLinkText: 'certipair.fr',
+    description: 'Developed the UI and UX eco-system for a medecine platform using modular component structures with JS, Typescript, React and Redux.',
+    logoImage: 'https://media.licdn.com/dms/image/D4D0BAQFaXxFdMc9ozA/company-logo_200_200/0/1666797951368?e=2147483647&v=beta&t=ilS49hdwCfOJ3AwiASLzXp88TfMku9cOlSlI-YrUyjM',
+    langages: ['React', 'Javascript', 'Redux', 'Material-UI'],
+  },
+  {
+    post: "Stage collège",
+    company: "Poste",
+    date: "?????",
+    localisation: "Saint-Estève",
+    companyLinkText: 'laposte.fr/saint-esteve',
+    companyLink: 'https://localiser.laposte.fr/pyrenees-orientales/saint-etienne/saint-esteve-661720',
+    description: 'Internship discovery for college',
+    logoImage: 'https://upload.wikimedia.org/wikipedia/fr/0/0d/La_Poste_2022.svg',
+    langages: ['Html', 'Css'],
+  }
+]
