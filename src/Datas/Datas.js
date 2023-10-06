@@ -114,3 +114,20 @@ export const dataExperience = [
     langages: ['Html', 'Css'],
   }
 ]
+
+export const datasMedia = [
+  {
+    name: 'Github',
+    link: 'https://github.com/Nabzilooo',
+    logo: 'https://karuta-portfolio.univ-littoral.fr/wp-content/uploads/2017/08/006-github.png',
+    width: '43px',
+    height: '43px'
+  },
+  {
+    name: 'Linkedin',
+    link: 'https://www.linkedin.com/in/adilnouiri/',
+    logo: 'https://www.urba-ea.org/wp-content/uploads/2021/04/logo-linkedin.png',
+    width: '50px',
+    height: '50px'
+  }
+]

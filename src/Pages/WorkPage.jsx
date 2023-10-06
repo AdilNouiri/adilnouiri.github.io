@@ -221,8 +221,6 @@ const Project = ({ data, projectSelected }) => {
   );
 }
 
-
-
 const ProjectsList = ({ datas, sectionSelected }) => {
 
   const [projectsDatas, setProjectsDatas] = useState([]);
@@ -259,7 +257,6 @@ const ProjectsList = ({ datas, sectionSelected }) => {
     </Grid>
   );
 }
-
 
 const WorkPage = ({ datas }) => {
 

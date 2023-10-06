@@ -75,3 +75,9 @@
   src: local("Poppins-Bold"),
     url("./Assets/Fonts/Poppins/Poppins-Bold.ttf") format("truetype");
 }
+
+@font-face {
+  font-family: "Poppins-ExtraBoldItalic";
+  src: local("Poppins-ExtraBoldItalic"),
+    url("./Assets/Fonts/Poppins/Poppins-ExtraBoldItalic.ttf") format("truetype");
+}

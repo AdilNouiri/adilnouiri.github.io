@@ -5,6 +5,7 @@ import ExpertisePage from './Pages/ExpertisePage';
 import WorkPage from './Pages/WorkPage';
 import { workDatas } from './Datas/Datas.js';
 import ExperiencePage from './Pages/ExperiencePage';
+import ContactPage from './Pages/ContactPage';
 
 const App = () => {
 
@@ -22,8 +23,8 @@ const App = () => {
       <Grid item style={{ paddingTop: '125px', width: '100%' }}>
         <ExperiencePage />
       </Grid>
-      <Grid item style={{ paddingTop: '125px', width: '100%' }}>
-
+      <Grid item style={{ paddingTop: '125px', paddingBottom: '50px', width: '100%' }}>
+        <ContactPage />
       </Grid>
     </Grid>
   );
