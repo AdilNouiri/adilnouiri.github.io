@@ -80,39 +80,71 @@ const Band = ({ bandSize }) => {
 	);
 };
 
-const PopupUpOnEmail = () => {
+const PopupUpOnEmail = ({mouseOn, isClicked}) => {
 	return (
-		<Grid item style={{padding: '20px', width: '200px', backgroundColor: 'black', borderRadius: '25px'}}>
-			<span style={{fontSize: '10px', color: 'grey'}}>
-				Copy mail to clipboard ?
-			</span>
-		</Grid>
+    <Grid item
+      style={{
+        backgroundColor: 'black',
+        borderRadius: '10px',
+        position: "absolute",
+        padding: '8px',
+        marginTop: '-50px',
+        paddingLeft: '15px',
+        paddingRight: '15px',
+        opacity: '0.7',
+        paddingBottom: '5px',
+        opacity: mouseOn ? 1 : 0,
+        transition: 'opacity 0.6s ease-in-out',
+        textAlign: 'center'}}>
+      <span style={{fontSize: '18px', color: 'white'}}>
+        {isClicked ? 'Mail is copied !' : 'Copy mail to clipboard ?'}
+      </span>
+    </Grid>
 	);
 };
 
-const ContactMe = () => {
+const ContactMe = ({windowWidth}) => {
+
+	const [mouseOn, setMouseOn] = useState(false);
+  const [isClicked, setIsClicked] = useState(false);
+
+  const clickOnEmail = () => {
+      const emailToCopy = "adil.nouiri@epitech.eu";
+      const textArea = document.createElement("textarea");
+      textArea.value = emailToCopy;
+      document.body.appendChild(textArea);
+      textArea.select();
+      document.execCommand("copy");
+      document.body.removeChild(textArea);
+      setIsClicked(true);
+      return;
+  };
 
 	const textStyle = {
-		color: 'white',
-		fontFamily: 'ArabotoNormal',
-		fontSize: '20px',
-		fontWeight: 600,
-		letterSpacing: '-1px'
-	};
+    color: 'white',
+    fontFamily: 'ArabotoNormal',
+    fontSize: '23px',
+    fontWeight: 600,
+    letterSpacing: '-1px'
+};
 
 	const emailStyle = {
 		color: 'white',
 		fontFamily: 'ArabotoNormal',
 		fontSize: '30px',
 		fontWeight: 600,
-		letterSpacing: '-1px'
+		letterSpacing: '-1px',
+    cursor: 'pointer'
 	};
 
 	return (
 		<Grid container
     direction='row'
-    style={{ width: '90%', border: '1px solid red', justifyContent: 'space-between', marginLeft: 'auto' }}>
-    <Grid item>
+    style={{
+      width: windowWidth <= 510 ? '100%' : '90%',
+      justifyContent: 'space-between',
+      marginLeft: 'auto',}}>
+    <Grid item style={{paddingBottom: windowWidth <= 956 ? '20px' : '0px'}}>
         <span style={textStyle}>
             Have an exciting project you need help with?
             <br />
@@ -121,10 +153,14 @@ const ContactMe = () => {
             instant message!
         </span>
     </Grid>
-    <Grid item style={{paddingRight: '100px', cursor: 'pointer'}}>
-			<PopupUpOnEmail />
+    <Grid item
+		onMouseEnter={() => setMouseOn(true)}
+		onMouseLeave={() => setMouseOn(false)}
+    onClick={clickOnEmail}
+		style={{paddingRight: '100px', paddingBottom: windowWidth <= 956 ? '50px' : '0px'}}>
+				<PopupUpOnEmail mouseOn={mouseOn} isClicked={isClicked}/>
 			<span style={emailStyle}>
-					adil.nouiri@epitech.eu
+				adil.nouiri@epitech.eu
 			</span>
 			<Band bandSize='300px'/>
 		</Grid>
@@ -137,13 +173,13 @@ const MyCredit = ({isWrapped}) => {
 
 	const nameStyle = {
 		color: 'white',
-		fontSize: '25px',
+		fontSize: '30px',
 		fontFamily: 'Poppins-ExtraBoldItalic'
 	};
 
 	const jobStyle = {
 		color: 'white',
-		fontSize: '10px',
+		fontSize: '13px',
 		fontFamily: 'Poppins-Medium'
 	};
 
@@ -192,7 +228,7 @@ const Footer = ({windowWidth}) => {
 				container
 				direction='column'
 				style={{alignItems: 'flex-start'}}>
-					<Grid item >
+					<Grid item style={{paddingBottom: '5px'}}>
 						<SocialMedia />
 					</Grid>
 					<Grid item>
@@ -222,13 +258,13 @@ const ContactPage = () => {
 	return (
 		<Grid container
 			direction='column'
-			id='work'
+			id='contact'
 			style={{width: '100%', maxWidth: '1250px', margin: '0 auto' }}>
 			<Grid item style={{paddingBottom: '100px'}}>
 				<Title title1='Wanna' title2='be starting' title3='something ?' windowWidth={windowWidth} />
 			</Grid>
-			<Grid item>
-			  <ContactMe />
+			<Grid item style={{paddingBottom: '50px'}}>
+			  <ContactMe windowWidth={windowWidth}/>
 			</Grid>
 			<Grid item>
 				<Footer windowWidth={windowWidth}/>
