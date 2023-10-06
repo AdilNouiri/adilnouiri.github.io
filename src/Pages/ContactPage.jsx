@@ -91,7 +91,6 @@ const PopupUpOnEmail = ({mouseOn, isClicked}) => {
         marginTop: '-50px',
         paddingLeft: '15px',
         paddingRight: '15px',
-        opacity: '0.7',
         paddingBottom: '5px',
         opacity: mouseOn ? 1 : 0,
         transition: 'opacity 0.6s ease-in-out',
