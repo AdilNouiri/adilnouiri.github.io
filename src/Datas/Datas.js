@@ -31,7 +31,7 @@ export const workDatas = [
       text: 'All',
       projects : [
         {
-          title: 'RPG TAH LES FOU',
+          title: 'RPG',
           imageSrc: 'https://image.jeuxvideo.com/images-md/ds/p/o/pokemon-donjon-mystere-explorateurs-du-ciel-nintendo-ds-00a.jpg',
           categorie: 'Epitech',
           langages: ['C'],
@@ -98,21 +98,21 @@ export const dataExperience = [
     localisation: "remote",
     companyLink: 'https://www.certipair.fr/',
     companyLinkText: 'certipair.fr',
-    description: 'Developed the UI and UX eco-system for a medecine platform using modular component structures with JS, Typescript, React and Redux.',
+    description: 'Developed the UI and UX eco-system for a medical platform using modular component structures with JS, Typescript, React and Redux.',
     logoImage: 'https://media.licdn.com/dms/image/D4D0BAQFaXxFdMc9ozA/company-logo_200_200/0/1666797951368?e=2147483647&v=beta&t=ilS49hdwCfOJ3AwiASLzXp88TfMku9cOlSlI-YrUyjM',
     langages: ['React', 'Javascript', 'Redux', 'Material-UI'],
   },
-  {
-    post: "Stage collège",
-    company: "Poste",
-    date: "?????",
-    localisation: "Saint-Estève",
-    companyLinkText: 'laposte.fr/saint-esteve',
-    companyLink: 'https://localiser.laposte.fr/pyrenees-orientales/saint-etienne/saint-esteve-661720',
-    description: 'Internship discovery for college',
-    logoImage: 'https://upload.wikimedia.org/wikipedia/fr/0/0d/La_Poste_2022.svg',
-    langages: ['Html', 'Css'],
-  }
+  // {
+  //   post: "Stage collège",
+  //   company: "Poste",
+  //   date: "?????",
+  //   localisation: "Saint-Estève",
+  //   companyLinkText: 'laposte.fr/saint-esteve',
+  //   companyLink: 'https://localiser.laposte.fr/pyrenees-orientales/saint-etienne/saint-esteve-661720',
+  //   description: 'Internship discovery for college',
+  //   logoImage: 'https://upload.wikimedia.org/wikipedia/fr/0/0d/La_Poste_2022.svg',
+  //   langages: ['Html', 'Css'],
+  // }
 ]
 
 export const datasMedia = [

@@ -168,7 +168,7 @@ const FirstLineInformation = ({data}) => {
           style={{
             cursor: 'pointer'
           }}>
-          <Grid item style={{paddingRight: '10px'}}>
+          <Grid item onClick={openLink} style={{paddingRight: '10px'}}>
             <OpenInNewIcon style={iconStyle}/>
           </Grid>
           <Grid item onClick={openLink}>
