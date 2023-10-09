@@ -103,6 +103,7 @@ const RightClickableSide = ({ closeSideNavbar }) => {
       style={{
         height: '100vh',
         cursor: 'pointer',
+        backdropFilter: 'blur(10px)',
       }}
     />
   );

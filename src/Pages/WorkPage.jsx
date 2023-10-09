@@ -3,19 +3,20 @@ import { useEffect, useState } from 'react';
 import '../Styles/ScrollDownIndicator.css';
 import { competencesLogo } from '../Datas/Datas.js';
 
-const textTitle = {
-  fontSize: '100px',
-  textShadow: '1px 3px 11px rgba(0,0,0,.3)',
-  letterSpacing: '-0.2px',
-  fontFamily: 'Poppins-Medium',
-  fontWeight: '600',
-  color: 'white',
-  margin: '0',
-  boxSizing: 'border-box',
-  lineHeight: '1.4',
-};
+const Title = ({ title1, title2, windowWidth }) => {
 
-const Title = ({ title1, title2 }) => {
+  const textTitle = {
+    fontSize: windowWidth  <= 340 ? '27vw' : '100px',
+    textShadow: '1px 3px 11px rgba(0,0,0,.3)',
+    letterSpacing: '-0.2px',
+    fontFamily: 'Poppins-Medium',
+    fontWeight: '600',
+    color: 'white',
+    margin: '0',
+    boxSizing: 'border-box',
+    lineHeight: '1.4',
+  };
+
   return (
     <Grid item>
       <Grid item>
@@ -123,7 +124,7 @@ const FilterProjects = ({ datas, sectionSelected, setSectionSelected }) => {
   );
 }
 
-const Project = ({ data, projectSelected }) => {
+const Project = ({ data, projectSelected, windowWidth }) => {
 
   const [isMouseOnShowProject, setIsMouseOnShowProject] = useState(false);
 
@@ -152,11 +153,11 @@ const Project = ({ data, projectSelected }) => {
   };
 
   return (
-    <Grid container direction='column' style={{width: "380px" }}>
+    <Grid container direction='column' style={{width: windowWidth <= 438 ? '80vw' : '380px' }}>
       <Grid item>
         <img
           src={data.imageSrc}
-          style={{ borderRadius: '7px', width: "380px", height: '285px', cursor: 'pointer' }}
+          style={{ borderRadius: '7px', width: windowWidth <= 438 ? '80vw' : '380px', height: '285px', cursor: 'pointer' }}
           alt="ImageProject"
         />
       </Grid>
@@ -221,7 +222,7 @@ const Project = ({ data, projectSelected }) => {
   );
 }
 
-const ProjectsList = ({ datas, sectionSelected }) => {
+const ProjectsList = ({ datas, sectionSelected, windowWidth }) => {
 
   const [projectsDatas, setProjectsDatas] = useState([]);
   const [projectSelected, setProjectSelected] = useState("");
@@ -245,13 +246,13 @@ const ProjectsList = ({ datas, sectionSelected }) => {
 
 
   return (
-    <Grid container direction='row'>
+    <Grid container direction='row' style={{width: '100%'}}>
       {projectsDatas.map((projectData, index) => (
         <Grid item key={index}
           onMouseEnter={() => setProjectSelected(projectData.title)}
           onMouseLeave={() => setProjectSelected("")}
           style={{paddingRight: index === projectsDatas.length ? '0px' : '36px', paddingBottom: '40px'}}>
-          <Project data={projectData} projectSelected={projectSelected} />
+          <Project data={projectData} projectSelected={projectSelected} windowWidth={windowWidth}/>
         </Grid>
       ))}
     </Grid>
@@ -261,23 +262,41 @@ const ProjectsList = ({ datas, sectionSelected }) => {
 const WorkPage = ({ datas }) => {
 
   const [sectionSelected, setSectionSelected] = useState('all');
+  const [windowWidth, setWindowWidth] = useState(window.innerWidth);
+
+  useEffect(() => {
+    const handleResize = () => {
+      setWindowWidth(window.innerWidth);
+    };
+
+    window.addEventListener('resize', handleResize);
+
+    return () => {
+      window.removeEventListener('resize', handleResize);
+    };
+  }, []);
+
 
   return (
     <Grid container
       direction='column'
       id='work'
-      style={{width: '100%', maxWidth: '1250px', margin: '0 auto' }}>
-      <Grid item>
+      style={{
+        width: '100%',
+        maxWidth: '1250px',
+        margin: '0 auto'
+      }}>
+      <Grid item style={{width: '100%'}}>
         <Grid>
-          <Title title1='My' title2='Works' />
+          <Title title1='My' title2='Works' windowWidth={windowWidth}/>
         </Grid>
       </Grid>
 
-      <Grid item style={{paddingBottom: '40px'}}>
+      <Grid item style={{paddingBottom: '40px', width: '100%'}}>
         <FilterProjects datas={datas} sectionSelected={sectionSelected} setSectionSelected={setSectionSelected} />
       </Grid>
-      <Grid item>
-        <ProjectsList datas={datas} sectionSelected={sectionSelected} />
+      <Grid item style={{width: '100%'}}>
+        <ProjectsList datas={datas} sectionSelected={sectionSelected} windowWidth={windowWidth}/>
       </Grid>
     </Grid>
   );

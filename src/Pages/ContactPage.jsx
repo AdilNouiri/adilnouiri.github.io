@@ -104,7 +104,7 @@ const PopupUpOnEmail = ({mouseOn, isClicked}) => {
 
 const ContactMe = ({windowWidth}) => {
 
-	const [mouseOn, setMouseOn] = useState(false);
+  const [mouseOn, setMouseOn] = useState(false);
   const [isClicked, setIsClicked] = useState(false);
 
   const clickOnEmail = () => {
@@ -122,15 +122,17 @@ const ContactMe = ({windowWidth}) => {
 	const textStyle = {
     color: 'white',
     fontFamily: 'ArabotoNormal',
-    fontSize: '23px',
+	  fontSize: '23px',
     fontWeight: 600,
-    letterSpacing: '-1px'
-};
+    letterSpacing: '-1px',
+    whiteSpace: 'normal',
+    wordWrap: 'break'
+	};
 
 	const emailStyle = {
 		color: 'white',
 		fontFamily: 'ArabotoNormal',
-		fontSize: '30px',
+		fontSize: windowWidth <= 328 ? '9vw' : '30px',
 		fontWeight: 600,
 		letterSpacing: '-1px',
     cursor: 'pointer'
@@ -142,7 +144,7 @@ const ContactMe = ({windowWidth}) => {
     style={{
       width: windowWidth <= 510 ? '100%' : '90%',
       justifyContent: 'space-between',
-      marginLeft: 'auto',}}>
+      marginLeft: 'auto'}}>
     <Grid item style={{paddingBottom: windowWidth <= 956 ? '20px' : '0px'}}>
         <span style={textStyle}>
             Have an exciting project you need help with?
@@ -156,12 +158,12 @@ const ContactMe = ({windowWidth}) => {
 		onMouseEnter={() => setMouseOn(true)}
 		onMouseLeave={() => setMouseOn(false)}
     onClick={clickOnEmail}
-		style={{paddingRight: '100px', paddingBottom: windowWidth <= 956 ? '50px' : '0px'}}>
+		style={{paddingRight: windowWidth <= 956 ? '0px' : '100px', paddingBottom: windowWidth <= 956 ? '50px' : '0px'}}>
 				<PopupUpOnEmail mouseOn={mouseOn} isClicked={isClicked}/>
 			<span style={emailStyle}>
 				adil.nouiri@epitech.eu
 			</span>
-			<Band bandSize='300px'/>
+			<Band bandSize={windowWidth <= 328 ? '29vh' : '300px'}/>
 		</Grid>
 	</Grid>
 

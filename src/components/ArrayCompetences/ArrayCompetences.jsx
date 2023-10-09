@@ -127,7 +127,7 @@ const CompetenceBox = ({ dataBox, isLittle }) => {
         paddingLeft: '30px',
         paddingRight: '30px',
         maxWidth: isLittle ? '362px' : '650px',
-        minWidth: '200px',
+        minWidth: '260px',
         boxSizing: 'border-box',
       }}>
       <Grid item>
