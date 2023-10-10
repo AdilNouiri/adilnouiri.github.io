@@ -45,7 +45,7 @@ const Description = () => {
       </Grid>
       <Grid item>
         <h5 style={descriptionTitle}>
-          Software Engineer, Front end & App Developer.
+          Computer science, Front end & App Developer.
         </h5>
       </Grid>
       <Grid item
