@@ -312,13 +312,12 @@ const ExperiencePage = () => {
     <Grid
       container
       direction='column'
-      id='experience'
       style={{
         alignItems: 'center',
         width: '100%'
       }}
     >
-      <Grid item style={{paddingBottom: '20px' }}>
+      <Grid item id='experience' style={{ paddingTop: '60px', paddingBottom: '20px'}}>
         <Grid>
           <Title title1='Professional' title2='Experience' windowWidth={windowWidth} />
         </Grid>

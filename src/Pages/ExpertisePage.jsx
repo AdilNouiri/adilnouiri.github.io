@@ -37,11 +37,10 @@ const ExpertisePage = () => {
   return (
     <Grid container
       direction='column'
-      id='expertise'
       style={{
         alignItems: 'center'
       }}>
-      <Grid item style={{ paddingBottom: '20px', width: '100%', textAlign: windowWidth <= 485 ? 'left' : 'center' }}>
+      <Grid item id='expertise' style={{ paddingTop: '70px', paddingBottom: '20px', width: '100%', textAlign: windowWidth <= 485 ? 'left' : 'center' }}>
         <span style={textTitle}>
           My Expertise
         </span>

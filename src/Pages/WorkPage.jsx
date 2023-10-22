@@ -1,6 +1,5 @@
 import { Grid } from '@mui/material';
 import { useEffect, useState } from 'react';
-import '../Styles/ScrollDownIndicator.css';
 import { competencesLogo } from '../Datas/Datas.js';
 
 const Title = ({ title1, title2, windowWidth }) => {
@@ -280,13 +279,12 @@ const WorkPage = ({ datas }) => {
   return (
     <Grid container
       direction='column'
-      id='work'
       style={{
         width: '100%',
         maxWidth: '1250px',
         margin: '0 auto'
       }}>
-      <Grid item style={{width: '100%'}}>
+      <Grid item id='work' style={{width: '100%', paddingTop: '40px'}}>
         <Grid>
           <Title title1='My' title2='Works' windowWidth={windowWidth}/>
         </Grid>

@@ -9,7 +9,7 @@ const LeftSide = ({ closeSideNavbar}) => {
 
   const sectionNames = [
     '// home',
-    '// about me',
+    // '// about me',
     '// expertise',
     '// work',
     '// experience',

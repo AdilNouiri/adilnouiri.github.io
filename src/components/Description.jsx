@@ -27,6 +27,21 @@ const Description = () => {
     marginTop: '10px',
   };
 
+  const CVTitle = {
+    fontSize: '18px',
+    color: 'white',
+    fontFamily: 'Poppins-Medium',
+    wordWrap: 'break',
+    textAlign: 'center',
+    margin: '20px'
+  };
+
+  const openCV = () => {
+    const pdfLink = 'https://drive.google.com/file/d/1NiKOkaPxNp8ULEw7dhx7jiAYZVGPfaqX/view';
+  
+    window.open(pdfLink, '_blank');
+  };
+
   return (
     <Grid
       container
@@ -48,9 +63,22 @@ const Description = () => {
           Computer science, Front end & App Developer.
         </h5>
       </Grid>
+      <Grid item style={{
+          backgroundColor: '#66d9ed',
+          borderRadius: '15px',
+          paddingTop: '5px',
+          paddingBottom: '5px',
+          cursor: 'pointer',
+          textAlign: 'center'
+          }}
+          onClick={openCV}>
+        <span style={CVTitle}>
+          Download CV
+        </span>
+      </Grid>
       <Grid item
         onClick={() => { ScrollToComponent('#expertise') }}
-        style={{ position: 'absolute', bottom: '70px', cursor: 'pointer' }}>
+        style={{ position: 'absolute', bottom: '40px', cursor: 'pointer' }}>
         <div className="button scroll">
           <span className="scroll-down-arrow"></span>
         </div>

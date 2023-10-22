@@ -14,13 +14,13 @@ const App = () => {
       <Grid item >
         <Home />
       </Grid>
-      <Grid item style={{ paddingTop: '50px', width: '100%' }}>
+      <Grid item style={{ width: '100%' }}>
         <ExpertisePage />
       </Grid>
-      <Grid item style={{ paddingTop: '200px', width: '100%' }}>
+      <Grid item style={{ paddingTop: '160px', width: '100%' }}>
         <WorkPage datas={workDatas} />
       </Grid>
-      <Grid item style={{ paddingTop: '125px', width: '100%' }}>
+      <Grid item style={{ paddingTop: '65px', width: '100%' }}>
         <ExperiencePage />
       </Grid>
       <Grid item style={{ paddingTop: '250px', paddingBottom: '50px', width: '100%' }}>

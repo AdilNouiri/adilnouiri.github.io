@@ -35,7 +35,7 @@ export const workDatas = [
           imageSrc: 'https://image.jeuxvideo.com/images-md/ds/p/o/pokemon-donjon-mystere-explorateurs-du-ciel-nintendo-ds-00a.jpg',
           categorie: 'Epitech',
           langages: ['C'],
-          link: 'https://www.google.com/'
+          link: 'https://github.com/Nabzilooo/RPG-Pokemon-Donjon-Mystere'
         },
         {
           title: 'MyTeams',
@@ -74,10 +74,10 @@ export const dataExpertise = [
     },
     {
       title1: 'Frontend Dev',
-      title2: 'React, Angular',
+      title2: 'React',
       bandColor: '#2c3599',
       bandSize: '160px',
-      description: 'Passionate about UI/UX. Over 2 years of development experience in HTML, CSS, JS, Redux, React and Angular frameworks.',
+      description: 'Passionate about UI/UX. Over 2 years of development experience in HTML, CSS, JS, Redux, React frameworks.',
       type: 'web'
     },
     {
@@ -100,7 +100,7 @@ export const dataExperience = [
     companyLinkText: 'certipair.fr',
     description: 'Developed the UI and UX eco-system for a medical platform using modular component structures with JS, Typescript, React and Redux.',
     logoImage: 'https://media.licdn.com/dms/image/D4D0BAQFaXxFdMc9ozA/company-logo_200_200/0/1666797951368?e=2147483647&v=beta&t=ilS49hdwCfOJ3AwiASLzXp88TfMku9cOlSlI-YrUyjM',
-    langages: ['React', 'Javascript', 'Redux', 'Material-UI'],
+    langages: ['React', 'React Native', 'Javascript', 'Typescript', 'Redux', 'Material-UI'],
   },
   // {
   //   post: "Stage collège",

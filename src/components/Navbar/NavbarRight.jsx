@@ -56,20 +56,20 @@ const NavbarRight = ({isDown}) => {
       <Grid item>
         <NavbarSection id='#home' text='// home' num='01' hovered={hovered} setHovered={setHovered} isDown={isDown} />
       </Grid>
-      <Grid item>
+      {/* <Grid item>
         <NavbarSection id='#about me' text='// about me' num='02' hovered={hovered} setHovered={setHovered} isDown={isDown} />
+      </Grid> */}
+      <Grid item>
+        <NavbarSection id='#expertise' text='// expertise' num='02' hovered={hovered} setHovered={setHovered} isDown={isDown} />
       </Grid>
       <Grid item>
-        <NavbarSection id='#expertise' text='// expertise' num='03' hovered={hovered} setHovered={setHovered} isDown={isDown} />
+        <NavbarSection id='#work' text='// work' num='03' hovered={hovered} setHovered={setHovered} isDown={isDown} />
       </Grid>
       <Grid item>
-        <NavbarSection id='#work' text='// work' num='04' hovered={hovered} setHovered={setHovered} isDown={isDown} />
+        <NavbarSection id='#experience' text='// experience' num='04' hovered={hovered} setHovered={setHovered} isDown={isDown} />
       </Grid>
       <Grid item>
-        <NavbarSection id='#experience' text='// experience' num='05' hovered={hovered} setHovered={setHovered} isDown={isDown} />
-      </Grid>
-      <Grid item>
-        <NavbarSection id='#contact' text='// contact' num='06' hovered={hovered} setHovered={setHovered} isDown={isDown} />
+        <NavbarSection id='#contact' text='// contact' num='05' hovered={hovered} setHovered={setHovered} isDown={isDown} />
       </Grid>
     </Grid>
   );
