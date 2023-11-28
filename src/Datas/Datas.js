@@ -1,7 +1,15 @@
 export const competencesLogo = [
     {
       langage : 'C',
-      logo: 'https://upload.wikimedia.org/wikipedia/commons/thumb/1/18/C_Programming_Language.svg/695px-C_Programming_Language.svg.png'
+      logo: 'https://i.postimg.cc/t4k6VCPD/sticker-png-java-logo-c-c-programming-language-computer-programming-source-code-computer-software-cl.png'
+    },
+    {
+      langage : 'C++',
+      logo: 'https://upload.wikimedia.org/wikipedia/commons/thumb/1/18/ISO_C%2B%2B_Logo.svg/1822px-ISO_C%2B%2B_Logo.svg.png'
+    },
+    {
+      langage : 'Haskell',
+      logo: 'https://upload.wikimedia.org/wikipedia/commons/thumb/1/1c/Haskell-Logo.svg/2560px-Haskell-Logo.svg.png'
     },
     {
       langage : 'React',
@@ -31,6 +39,13 @@ export const workDatas = [
       text: 'All',
       projects : [
         {
+          title: 'Certipair',
+          imageSrc: 'https://www.certipair.fr/wp-content/uploads/2023/01/Certipair-image-en-avant.jpg',
+          categorie: 'Web',
+          langages: ['React', 'Javascript', 'Redux', 'Material-UI'],
+          link: 'https://app.certipair.fr/'
+        },
+        {
           title: 'RPG',
           imageSrc: 'https://image.jeuxvideo.com/images-md/ds/p/o/pokemon-donjon-mystere-explorateurs-du-ciel-nintendo-ds-00a.jpg',
           categorie: 'Epitech',
@@ -38,19 +53,33 @@ export const workDatas = [
           link: 'https://github.com/Nabzilooo/RPG-Pokemon-Donjon-Mystere'
         },
         {
-          title: 'MyTeams',
-          imageSrc: 'https://i0.wp.com/anthonyspiteri.net/wp-content/uploads/2021/01/Screen-Shot-2021-01-25-at-8.47.23-pm.png?resize=427%2C238&ssl=1',
+          title: 'Raytracer',
+          imageSrc: 'https://image.noelshack.com/fichiers/2023/48/2/1701165776-basic-scene-plane-sphere.jpg',
           categorie: 'Epitech',
           langages: ['C'],
-          link: 'https://www.google.com/'
+          link: 'https://github.com/AdilNouiri/Raytracer'
         },
         {
-          title: 'Certipair',
-          imageSrc: 'https://www.certipair.fr/wp-content/uploads/2023/01/Certipair-image-en-avant.jpg',
-          categorie: 'Web',
-          langages: ['React', 'Javascript', 'Redux', 'Material-UI'],
-          link: 'https://app.certipair.fr/'
-        }
+          title: 'R-Type',
+          imageSrc: 'https://fs-prod-cdn.nintendo-europe.com/media/images/10_share_images/games_15/virtual_console_wii_u_7/H2x1_WiiUVC_RType.jpg',
+          categorie: 'Epitech',
+          langages: ['C++'],
+          link: 'https://github.com/AdilNouiri/RType'
+        },
+        {
+          title: 'Gomoku',
+          imageSrc: 'https://play-lh.googleusercontent.com/AmjoCLvBrT3xZ_LSgT8xXkC9pTSSvUwkdPBybreRYjqYuqP5jfsFS00NywSx0Gn1H3U',
+          categorie: 'Epitech',
+          langages: ['C++'],
+          link: 'https://github.com/AdilNouiri/Gomoku'
+        },
+        {
+          title: 'Wolfram',
+          imageSrc: 'https://mathematica.pl/files/grafika/mozliwosci/mma_programy/images/index_gr_13.gif',
+          categorie: 'Epitech',
+          langages: ['Haskell'],
+          link: 'https://github.com/AdilNouiri/Wolfram'
+        },
       ]
     },
     {
@@ -118,8 +147,8 @@ export const dataExperience = [
 export const datasMedia = [
   {
     name: 'Github',
-    link: 'https://github.com/Nabzilooo',
-    logo: 'https://karuta-portfolio.univ-littoral.fr/wp-content/uploads/2017/08/006-github.png',
+    link: 'https://github.com/AdilNouiri',
+    logo: 'https://cdn.icon-icons.com/icons2/2351/PNG/512/logo_github_icon_143196.png',
     width: '43px',
     height: '43px'
   },
