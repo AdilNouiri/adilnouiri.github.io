@@ -306,7 +306,7 @@ const ExperiencePage = () => {
     };
   }, []);
 
-  const maxWidth = windowWidth > 700 ? 700 : (windowWidth - 30);
+  const maxWidth = windowWidth > 800 ? 800 : (windowWidth - 30);
 
   return (
     <Grid

@@ -30,6 +30,30 @@ export const competencesLogo = [
     {
       langage : 'Material-UI',
       logo: 'https://img.stackshare.io/service/1904/default_44d81cb9fadbc3688b7e91a6d5217d0ea5358b57.png'
+    },
+    {
+      langage : 'Nextjs',
+      logo: 'https://images.ctfassets.net/23aumh6u8s0i/6pjUKboBuFLvCKkE3esaFA/5f2101d6d2add5c615db5e98a553fc44/nextjs.jpeg'
+    },
+    {
+      langage : 'Ionic',
+      logo: 'https://jumpgrowth.com/wp-content/uploads/2022/07/ionic.png'
+    },
+    {
+      langage : 'Sequilize',
+      logo: 'https://hyunseob.github.io/images/sequelizejs.png'
+    },
+    {
+      langage : 'Mysql',
+      logo: 'https://futuresolutionsonline.co.uk/wp-content/uploads/2023/04/mySQL-logo.png'
+    },
+    {
+      langage : 'Nodejs',
+      logo: 'https://www.zdnet.fr/wp-content/uploads/zdnet/2024/02/NodeJS.jpg'
+    },
+    {
+      langage : 'Expressjs',
+      logo: 'https://ajeetchaulagain.com/static/7cb4af597964b0911fe71cb2f8148d64/87351/express-js.png'
     }
 ];
 
@@ -44,6 +68,21 @@ export const workDatas = [
           categorie: 'Web',
           langages: ['React', 'Javascript', 'Redux', 'Material-UI'],
           link: 'https://app.certipair.fr/'
+        },
+        {
+          title: 'Linkease',
+          imageSrc: 'https://i.ibb.co/ScffGK8/Capture-d-cran-du-2024-10-03-05-08-28-Nero-AI-Standard.png',
+          categorie: 'Web',
+          langages: ['React', 'Nextjs', 'Ionic', 'Javascript', 'Nodejs', 'Mysql', 'Sequilize', 'Material-UI'],
+          link: ''
+        },
+        {
+          title: 'Echo',
+          imageSrc: 'https://i.ibb.co/BCkjsHq/Capture-d-cran-du-2024-10-03-05-22-15.png',
+          categorie: 'Web',
+          langages: ['React', 'Typescript', 'Nodejs', 'Expressjs', 'Mysql', 'Material-UI'],
+          link: '',
+          inprogress: true,
         },
         {
           title: 'RPG',
@@ -121,9 +160,20 @@ export const dataExpertise = [
 
 export const dataExperience = [
   {
+    post: "Web Scraping Developer",
+    company: "OneStock",
+    date: "Janv.2024 - aujourdhui",
+    localisation: "Toulouse & remote",
+    companyLink: 'https://www.onestock-retail.com/fr/',
+    companyLinkText: 'onestock.com',
+    description: 'Developed and optimized web scraping scripts for e-commerce data extraction using JavaScript, Puppeteer, jQuery, and Cheerio, ensuring efficient data collection and processing from dynamic web pages.',
+    logoImage: 'https://media.licdn.com/dms/image/v2/C4D0BAQFCLxowtCvoxg/company-logo_200_200/company-logo_200_200/0/1646126663568/onestock_logo?e=2147483647&v=beta&t=z4Z4P5OsAyAluW_TwHCyeGX8XxDFD1Cqi4cSj9cI1p4',
+    langages: ['Javascript', 'Puppeteer', 'Html', 'Jquery', 'Cheerio', 'Python', 'Sisense'],
+  },
+  {
     post: "Front-end web/mobile Developer",
     company: "Certipair",
-    date: "2022",
+    date: "Juil.2022 - déc.2022",
     localisation: "remote",
     companyLink: 'https://www.certipair.fr/',
     companyLinkText: 'certipair.fr',

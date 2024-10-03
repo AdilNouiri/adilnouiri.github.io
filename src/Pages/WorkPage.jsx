@@ -145,6 +145,7 @@ const Project = ({ data, projectSelected, windowWidth }) => {
 
   const showProjectStyle = {
     color: isMouseOnShowProject ? "#66d9ed" : "#efefef",
+    cursor: 'pointer',
     fontSize: "17px",
     marginBottom: "5px",
     lineHeight: "1.1",
@@ -153,18 +154,42 @@ const Project = ({ data, projectSelected, windowWidth }) => {
 
   return (
     <Grid container direction='column' style={{width: windowWidth <= 438 ? '80vw' : '380px' }}>
-      <Grid item>
+      <Grid item style={{ position: 'relative' }}>
         <img
           src={data.imageSrc}
-          style={{ borderRadius: '7px', width: windowWidth <= 438 ? '80vw' : '380px', height: '285px', cursor: 'pointer' }}
+          style={{
+            borderRadius: '7px',
+            width: windowWidth <= 438 ? '80vw' : '380px',
+            height: '285px',
+            cursor: 'pointer',
+            filter: data.inprogress ? 'grayscale(100%)' : 'none',
+            opacity: data.inprogress ? 0.4 : 1 
+          }}
           alt="ImageProject"
         />
+        {data.inprogress && (
+          <span style={{
+            position: 'absolute',
+            top: '50%',
+            left: '50%',
+            transform: 'translate(-50%, -50%)',
+            color: 'white',
+            fontSize: '24px',
+            fontWeight: 'bold',
+            textShadow: '1px 1px 3px rgba(0, 0, 0, 0.7)',
+            pointerEvents: 'none'
+          }}>
+            IN PROGRESS
+          </span>
+        )}
       </Grid>
+
       <Grid container direction='column'
         style={{
           padding: '30px',
           paddingBottom: '10px',
           marginTop: '-7px',
+          height: '200px',
           borderBottomLeftRadius: '5px',
           borderBottomRightRadius: '5px',
           backgroundColor: "#262626"}}>
@@ -180,23 +205,29 @@ const Project = ({ data, projectSelected, windowWidth }) => {
           </span>
         </Grid>
         ) : (
-          <Grid container direction='row' style={{alignItems: 'center'}}>
-
+          <Grid container direction='row' style={{ alignItems: 'center' }}>
             <Grid item
               style={{
                 paddingRight: '10px',
-                cursor: 'pointer'}}
-                onMouseEnter={() => setIsMouseOnShowProject(true)}
-                onMouseLeave={() => setIsMouseOnShowProject(false)}
-                onClick={() => window.open(data.link, '_blank')}>
+              }}
+              onMouseEnter={() => {
+                if (!data.inprogress)
+                  setIsMouseOnShowProject(true)
+              }}
+              onMouseLeave={() => setIsMouseOnShowProject(false)}
+              onClick={() => {
+                if (!data.inprogress) {
+                  window.open(data.link, '_blank');
+                }
+              }}>
               <span style={showProjectStyle}>
-                Show project
+                {data.inprogress ? 'In Progress' : 'Show project'}
               </span>
             </Grid>
-            <Grid item style={{color: 'grey', backgroundColor: 'grey', width: '50px', height: '2px', marginTop: '4px'}}/>
+            <Grid item style={{ color: 'grey', backgroundColor: 'grey', width: '50px', height: '2px', marginTop: '4px' }} />
           </Grid>
         )}
-       <Grid container direction='row' style={{paddingTop: '10px'}}>
+       <Grid container direction='row' style={{paddingTop: '20px'}}>
           {data.langages.map((langage, index) => {
 
             const langageObjet = competencesLogo.find(item => item.langage === langage);
