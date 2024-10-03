@@ -1,0 +1,23 @@
+{
+  "files": {
+    "main.css": "/static/css/main.7d8f0c4d.css",
+    "main.js": "/static/js/main.077a9f29.js",
+    "static/js/787.1ed0c42c.chunk.js": "/static/js/787.1ed0c42c.chunk.js",
+    "static/media/ArabotoLight.ttf": "/static/media/ArabotoLight.a9ebcd72be5a99bf41ee.ttf",
+    "static/media/ArabotoThin.ttf": "/static/media/ArabotoThin.233d96597f0c2218a1b6.ttf",
+    "static/media/ArabotoBold.ttf": "/static/media/ArabotoBold.3910ad159c8e23da060c.ttf",
+    "static/media/ArabotoNormal.ttf": "/static/media/ArabotoNormal.abfe2ae25b22ce9fe81a.ttf",
+    "static/media/ArabotoMedium.ttf": "/static/media/ArabotoMedium.0388b75bb9f589ce62d0.ttf",
+    "static/media/Poppins-ExtraBoldItalic.ttf": "/static/media/Poppins-ExtraBoldItalic.73d4495be63ad83b25cc.ttf",
+    "static/media/Poppins-Medium.ttf": "/static/media/Poppins-Medium.673ed42382ab264e0bf5.ttf",
+    "static/media/Poppins-Bold.ttf": "/static/media/Poppins-Bold.cdb29a5d7ccf57ff05a3.ttf",
+    "index.html": "/index.html",
+    "main.7d8f0c4d.css.map": "/static/css/main.7d8f0c4d.css.map",
+    "main.077a9f29.js.map": "/static/js/main.077a9f29.js.map",
+    "787.1ed0c42c.chunk.js.map": "/static/js/787.1ed0c42c.chunk.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.7d8f0c4d.css",
+    "static/js/main.077a9f29.js"
+  ]
+}
