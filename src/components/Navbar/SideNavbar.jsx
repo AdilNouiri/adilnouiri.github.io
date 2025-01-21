@@ -1,6 +1,7 @@
 import { Grid } from '@mui/material';
 import CloseIcon from '@mui/icons-material/Close';
 import { useState } from 'react';
+import { useEffect } from 'react';
 import ScrollToComponent from '../../Utils/ScrollToComponent';
 
 const LeftSide = ({ closeSideNavbar}) => {
@@ -81,12 +82,13 @@ const LeftSide = ({ closeSideNavbar}) => {
           </Grid>
         ))
       }
-      <Grid item style={{ paddingTop: '50px' }}>
+      <Grid item style={{ flexGrow: 1 }} />
+      <Grid item style={{ paddingBottom: '0px' }}>
         <span style={creditText}>
           © 2023. Made with passion by Nouiri Adil.
         </span>
       </Grid>
-      <Grid item style={{ marginTop: '-20px' }}>
+      <Grid item style={{ marginTop: '-20px', paddingBottom: '20px' }}>
         <span style={creditText}>All right reserved.</span>
       </Grid>
     </Grid >
@@ -110,6 +112,14 @@ const RightClickableSide = ({ closeSideNavbar }) => {
 }
 
 const SideNavbar = ({ setIsOpenMenu }) => {
+
+  useEffect(() => {
+    document.body.style.overflow = 'hidden';
+
+    return () => {
+      document.body.style.overflow = '';
+    };
+  }, []);
 
   const closeSideNavbar = () => {
     setTimeout(() => {
