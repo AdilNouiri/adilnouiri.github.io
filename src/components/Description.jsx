@@ -37,7 +37,7 @@ const Description = () => {
   };
 
   const openCV = () => {
-    const pdfLink = 'https://drive.google.com/file/d/1GjwOZTuzrBaA2FRDCy4GAaqyIlCGWOb6/view?usp=drive_link';
+    const pdfLink = 'https://drive.google.com/file/d/1j-tL0YgMo-SZsvZ_0IKajlx6xXpY2HsT/view?usp=sharing';
   
     window.open(pdfLink, '_blank');
   };
@@ -60,7 +60,7 @@ const Description = () => {
       </Grid>
       <Grid item>
         <h5 style={descriptionTitle}>
-          Computer science, Front end & App Developer.
+          Computer science, Full-Stack & App Developer.
         </h5>
       </Grid>
       <Grid item style={{

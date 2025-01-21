@@ -145,7 +145,15 @@ export const dataExpertise = [
       title2: 'React',
       bandColor: '#2c3599',
       bandSize: '160px',
-      description: 'Passionate about UI/UX. Over 2 years of development experience in HTML, CSS, JS, Redux, React frameworks.',
+      description: 'Passionate about UI/UX. Over 4 years of development experience in HTML, CSS, JS, Redux, React frameworks.',
+      type: 'web'
+    },
+    {
+      title1: 'Backend Dev',
+      title2: 'Node.js',
+      bandColor: '#d93d71',
+      bandSize: '160px',
+      description: 'Focused on creating robust and scalable backend solutions. Experienced in API development, database optimization, and system architecture for high-performance.',
       type: 'web'
     },
     {
@@ -162,7 +170,7 @@ export const dataExperience = [
   {
     post: "Web Scraping Developer",
     company: "OneStock",
-    date: "Janv.2024 - aujourdhui",
+    date: "Jan.2024 - today",
     localisation: "Toulouse & remote",
     companyLink: 'https://www.onestock-retail.com/fr/',
     companyLinkText: 'onestock.com',
@@ -173,7 +181,7 @@ export const dataExperience = [
   {
     post: "Front-end web/mobile Developer",
     company: "Certipair",
-    date: "Juil.2022 - déc.2022",
+    date: "Jul.2022 - dec.2022",
     localisation: "remote",
     companyLink: 'https://www.certipair.fr/',
     companyLinkText: 'certipair.fr',

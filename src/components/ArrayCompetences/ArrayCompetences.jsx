@@ -186,7 +186,7 @@ const QuoteBox = ({ quote, credits, isLittle }) => {
 }
 
 const ArrayCompetences = ({ data }) => {
-
+  // eslint-disable-next-line
   const [windowSize, setWindowSize] = useState(window.innerWidth);
   const [isWrapped, setIsWrapped] = useState(false);
   const [isLittle, setIsLittle] = useState(false);
@@ -214,6 +214,9 @@ const ArrayCompetences = ({ data }) => {
       </Grid>
       <Grid item>
         <CompetenceBox dataBox={data[2]} isLittle={isLittle}/>
+      </Grid>
+      <Grid item>
+        <CompetenceBox dataBox={data[3]} isLittle={isLittle}/>
       </Grid>
       {isWrapped && (
         <Grid item>
