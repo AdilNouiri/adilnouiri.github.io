@@ -54,6 +54,18 @@ export const competencesLogo = [
     {
       langage : 'Expressjs',
       logo: 'https://ajeetchaulagain.com/static/7cb4af597964b0911fe71cb2f8148d64/87351/express-js.png'
+    },
+    {
+      langage : 'PostgreSQL',
+      logo: 'https://www.stickersdevs.com.br/wp-content/uploads/2022/01/postgreesql-logo-adesivo-sticker.png'
+    },
+    {
+      langage : 'Nestjs',
+      logo: 'https://ih1.redbubble.net/image.1084299841.8155/tst,small,507x507-pad,600x600,f8f8f8.jpg'
+    },
+    {
+      langage : 'Prismajs',
+      logo: 'https://media2.dev.to/dynamic/image/width=320,height=320,fit=cover,gravity=auto,format=auto/https%3A%2F%2Fdev-to-uploads.s3.amazonaws.com%2Fuploads%2Forganization%2Fprofile_image%2F1608%2F0f93b179-76bf-4ee7-a838-e8222fbef062.png'
     }
 ];
 
@@ -63,11 +75,12 @@ export const workDatas = [
       text: 'All',
       projects : [
         {
-          title: 'Certipair',
-          imageSrc: 'https://www.certipair.fr/wp-content/uploads/2023/01/Certipair-image-en-avant.jpg',
+          title: 'Echo',
+          imageSrc: 'https://i.ibb.co/BCkjsHq/Capture-d-cran-du-2024-10-03-05-22-15.png',
           categorie: 'Web',
-          langages: ['React', 'Javascript', 'Redux', 'Material-UI'],
-          link: 'https://app.certipair.fr/'
+          langages: ['React', 'Typescript', 'Nodejs', 'Nestjs', 'Prismajs', 'PostgreSQL', 'Material-UI'],
+          link: '',
+          inprogress: true,
         },
         {
           title: 'Linkease',
@@ -77,12 +90,11 @@ export const workDatas = [
           link: ''
         },
         {
-          title: 'Echo',
-          imageSrc: 'https://i.ibb.co/BCkjsHq/Capture-d-cran-du-2024-10-03-05-22-15.png',
+          title: 'Certipair',
+          imageSrc: 'https://www.certipair.fr/wp-content/uploads/2023/01/Certipair-image-en-avant.jpg',
           categorie: 'Web',
-          langages: ['React', 'Typescript', 'Nodejs', 'Expressjs', 'Mysql', 'Material-UI'],
-          link: '',
-          inprogress: true,
+          langages: ['React', 'Javascript', 'Redux', 'Material-UI'],
+          link: 'https://app.certipair.fr/'
         },
         {
           title: 'RPG',
@@ -154,7 +166,7 @@ export const dataExpertise = [
       bandColor: '#d93d71',
       bandSize: '160px',
       description: 'Focused on creating robust and scalable backend solutions. Experienced in API development, database optimization, and system architecture for high-performance.',
-      type: 'web'
+      type: 'back'
     },
     {
       title1: 'React Native Dev',

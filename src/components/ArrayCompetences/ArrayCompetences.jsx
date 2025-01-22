@@ -2,6 +2,7 @@ import { Grid } from '@mui/material';
 import ComputerIcon from '@mui/icons-material/Computer';
 import LanguageIcon from '@mui/icons-material/Language';
 import DeveloperModeIcon from '@mui/icons-material/DeveloperMode';
+import SettingsSystemDaydreamIcon from '@mui/icons-material/SettingsSystemDaydream';
 import DeleteIcon from '@mui/icons-material/Delete';
 import { useEffect, useState } from 'react';
 
@@ -112,6 +113,7 @@ const Icon = ({ type }) => {
         <ComputerIcon style={iconStyle} /> :
         type === 'web' ? <LanguageIcon style={iconStyle} /> :
           type === 'mobile' ? <DeveloperModeIcon style={iconStyle} /> :
+            type === 'back' ? <SettingsSystemDaydreamIcon style={iconStyle} /> :
             <DeleteIcon style={iconStyle} />}
     </Grid>
   );
