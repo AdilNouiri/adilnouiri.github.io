@@ -83,11 +83,11 @@ export const workDatas = [
           inprogress: true,
         },
         {
-          title: 'Linkease',
+          title: 'LinkEase',
           imageSrc: 'https://i.ibb.co/ScffGK8/Capture-d-cran-du-2024-10-03-05-08-28-Nero-AI-Standard.png',
           categorie: 'Web',
           langages: ['React', 'Nextjs', 'Ionic', 'Javascript', 'Nodejs', 'Mysql', 'Sequilize', 'Material-UI'],
-          link: ''
+          link: 'https://www.linkease.site/'
         },
         {
           title: 'Certipair',
