@@ -37,7 +37,7 @@ const Description = () => {
   };
 
   const openCV = () => {
-    const pdfLink = 'https://drive.google.com/file/d/1j-tL0YgMo-SZsvZ_0IKajlx6xXpY2HsT/view?usp=sharing';
+    const pdfLink = 'https://drive.google.com/file/d/1wideoCJwElG9q1D8wrHjZZtmFftRT2h1/view?usp=drivesdk';
   
     window.open(pdfLink, '_blank');
   };
