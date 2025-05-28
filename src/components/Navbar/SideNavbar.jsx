@@ -61,7 +61,7 @@ const LeftSide = ({ closeSideNavbar }) => {
         paddingLeft: '4.4vh',
         paddingRight: '4.4vh',
         backgroundColor: 'white',
-        height: '103vh',
+        height: '105vh',
         marginLeft: '-50px',
       }}
     >
@@ -118,7 +118,7 @@ const LeftSide = ({ closeSideNavbar }) => {
       <Grid item style={{ paddingBottom: '0px' }}>
         <span style={creditText}>© 2025. Made with passion by Nouiri Adil.</span>
       </Grid>
-      <Grid item style={{ marginTop: '-20px', paddingBottom: '20px' }}>
+      <Grid item style={{ marginTop: '-20px', paddingBottom: '40px' }}>
         <span style={creditText}>All right reserved.</span>
       </Grid>
     </Grid>
@@ -144,9 +144,16 @@ const SideNavbar = ({ setIsOpenMenu }) => {
   const [isVisible, setIsVisible] = useState(true);
 
   useEffect(() => {
+    const scrollY = window.scrollY;
+    document.body.style.top = `-${scrollY}px`;
     document.body.style.overflow = 'hidden';
+    document.body.style.width = '100%';
     return () => {
+      document.body.style.position = '';
+      document.body.style.top = '';
       document.body.style.overflow = '';
+      document.body.style.width = '';
+      window.scrollTo(0, scrollY);
     };
   }, []);
 
