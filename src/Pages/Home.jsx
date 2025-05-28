@@ -10,9 +10,11 @@ const Home = () => {
 
   return (
     <Grid>
-      {isOpenMenu && (
-        <SideNavbar setIsOpenMenu={setIsOpenMenu} />
-      )}
+        <Grid item style={{ position: 'fixed', zIndex: 9999 }}>
+          {isOpenMenu && (
+            <SideNavbar setIsOpenMenu={setIsOpenMenu} />
+          )}
+        </Grid>
       <Grid id='home' container direction='column' style={{ height: '100vh'}}>
         <Grid item>
           <Navbar isOpenMenu={isOpenMenu} setIsOpenMenu={setIsOpenMenu} />
