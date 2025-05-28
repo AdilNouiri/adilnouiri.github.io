@@ -6,7 +6,7 @@ const Description = () => {
 
   const textTitle = {
     fontSize: '9vw',
-    textShadow: '5px 5px 3px rgba(255,255,255,0.5)',
+    textShadow: window.innerWidth <= 768 ? '2px 2px 2px rgba(255,255,255,0.3)' : '5px 5px 3px rgba(255,255,255,0.5)',
     letterSpacing: '2.2px',
     textTransform: 'uppercase',
     fontFamily: 'Poppins-Medium',
