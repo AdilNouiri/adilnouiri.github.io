@@ -24,7 +24,6 @@ const NavbarDown = () => {
         <Grid>
             <NavbarRight isDown={true} />
         </Grid>
-
       </Grid>
     )
   };

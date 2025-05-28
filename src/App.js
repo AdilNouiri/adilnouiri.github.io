@@ -11,7 +11,7 @@ const App = () => {
 
   return (
     <Grid container direction='column' style={{ paddingLeft: '20px', paddingRight: '15px' }}>
-      <Grid item >
+      <Grid item style={{ height: '100%' }}>
         <Home />
       </Grid>
       <Grid item style={{ width: '100%' }}>

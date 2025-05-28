@@ -230,3 +230,37 @@ export const datasMedia = [
     height: '50px'
   }
 ]
+
+export const competenceLogos = {
+  computer: [
+    { src: 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/javascript/javascript-original.svg', name: 'JavaScript' },
+    { src: 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/typescript/typescript-original.svg', name: 'TypeScript' },
+    { src: 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/python/python-original.svg', name: 'Python' },
+    { src: 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/c/c-original.svg', name: 'C' },
+    { src: 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/cplusplus/cplusplus-original.svg', name: 'C++' },
+    { src: 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/haskell/haskell-original.svg', name: 'Haskell' }
+  ],
+  web: [
+    { src: 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/html5/html5-original.svg', name: 'HTML5' },
+    { src: 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/css3/css3-original.svg', name: 'CSS3' },
+    { src: 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/javascript/javascript-original.svg', name: 'JavaScript' },
+    { src: 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/typescript/typescript-original.svg', name: 'TypeScript' },
+    { src: 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/react/react-original.svg', name: 'React' },
+    { src: 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/redux/redux-original.svg', name: 'Redux' },
+  ],
+  back: [
+    { src: 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/nodejs/nodejs-original.svg', name: 'Node.js' },
+    { src: 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/nestjs/nestjs-original.svg', name: 'NestJS' },
+    { src: 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/mongodb/mongodb-original.svg', name: 'MongoDB' },
+    { src: 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/postgresql/postgresql-original.svg', name: 'PostgreSQL' },
+    { src: 'https://asset.brandfetch.io/idBBE3_R9e/idzL_5tH6B.jpg', name: 'Prisma' },
+    { src: 'https://mediaresource.sfo2.digitaloceanspaces.com/wp-content/uploads/2024/04/29200417/typeorm-logo-F243B34DEE-seeklogo.com.png', name: 'TypeORM' },
+    { src: 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/docker/docker-original.svg', name: 'Docker' },
+  ],
+  mobile: [
+    { src: 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/react/react-original.svg', name: 'React Native' },
+    { src: 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/android/android-original.svg', name: 'Android' },
+    { src: 'https://freepnglogo.com/images/all_img/1718130958apple-logo-white.png', name: 'iOS' },
+    { src: 'https://cdn.iconscout.com/icon/free/png-256/free-flutter-logo-icon-download-in-svg-png-gif-file-formats--technology-social-media-company-vol-3-pack-logos-icons-3030139.png', name: 'Flutter' }
+  ]
+};

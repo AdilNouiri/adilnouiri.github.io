@@ -1,6 +1,7 @@
 import { Grid } from '@mui/material';
 import { useState } from 'react';
 import ScrollToComponent from '../../Utils/ScrollToComponent';
+import { motion } from 'framer-motion';
 
 const NavbarSection = ({ id, text, num, hovered, setHovered, isDown }) => {
 
@@ -32,19 +33,32 @@ const NavbarSection = ({ id, text, num, hovered, setHovered, isDown }) => {
   }
 
   return (
-    <Grid container
-      direction='column'
-      onMouseOver={() => { setHovered(num) }}
-      onMouseOut={() => { setHovered("all") }}
-      onClick={() => { ScrollToComponent(id) }}
-      style={sectionContainerStyle}>
-      <span style={sectionNumberContainerStyle}>
-        {num}
-      </span>
-      <span style={sectionNameStyle}>
-        {text}
-      </span>
-    </Grid>
+    <motion.div
+      whileHover={{ scale: 1.05 }}
+      transition={{ type: "spring", stiffness: 400, damping: 10 }}
+    >
+      <Grid container
+        direction='column'
+        onMouseOver={() => { setHovered(num) }}
+        onMouseOut={() => { setHovered("all") }}
+        onClick={() => { ScrollToComponent(id) }}
+        style={sectionContainerStyle}>
+        <motion.span 
+          style={sectionNumberContainerStyle}
+          whileHover={{ x: 5 }}
+          transition={{ type: "spring", stiffness: 400, damping: 10 }}
+        >
+          {num}
+        </motion.span>
+        <motion.span 
+          style={sectionNameStyle}
+          whileHover={{ x: 5 }}
+          transition={{ type: "spring", stiffness: 400, damping: 10 }}
+        >
+          {text}
+        </motion.span>
+      </Grid>
+    </motion.div>
   )
 };
 
@@ -52,26 +66,32 @@ const NavbarRight = ({isDown}) => {
   const [hovered, setHovered] = useState("all");
 
   return (
-    <Grid container direction='row' >
-      <Grid item>
-        <NavbarSection id='#home' text='// home' num='01' hovered={hovered} setHovered={setHovered} isDown={isDown} />
+    <motion.div
+      initial={{ opacity: 0, y: -20 }}
+      animate={{ opacity: 1, y: 0 }}
+      transition={{ duration: 0.8, delay: 0.2 }}
+    >
+      <Grid container direction='row' >
+        <Grid item>
+          <NavbarSection id='#home' text='// home' num='01' hovered={hovered} setHovered={setHovered} isDown={isDown} />
+        </Grid>
+        {/* <Grid item>
+          <NavbarSection id='#about me' text='// about me' num='02' hovered={hovered} setHovered={setHovered} isDown={isDown} />
+        </Grid> */}
+        <Grid item>
+          <NavbarSection id='#expertise' text='// expertise' num='02' hovered={hovered} setHovered={setHovered} isDown={isDown} />
+        </Grid>
+        <Grid item>
+          <NavbarSection id='#work' text='// work' num='03' hovered={hovered} setHovered={setHovered} isDown={isDown} />
+        </Grid>
+        <Grid item>
+          <NavbarSection id='#experience' text='// experience' num='04' hovered={hovered} setHovered={setHovered} isDown={isDown} />
+        </Grid>
+        <Grid item>
+          <NavbarSection id='#contact' text='// contact' num='05' hovered={hovered} setHovered={setHovered} isDown={isDown} />
+        </Grid>
       </Grid>
-      {/* <Grid item>
-        <NavbarSection id='#about me' text='// about me' num='02' hovered={hovered} setHovered={setHovered} isDown={isDown} />
-      </Grid> */}
-      <Grid item>
-        <NavbarSection id='#expertise' text='// expertise' num='02' hovered={hovered} setHovered={setHovered} isDown={isDown} />
-      </Grid>
-      <Grid item>
-        <NavbarSection id='#work' text='// work' num='03' hovered={hovered} setHovered={setHovered} isDown={isDown} />
-      </Grid>
-      <Grid item>
-        <NavbarSection id='#experience' text='// experience' num='04' hovered={hovered} setHovered={setHovered} isDown={isDown} />
-      </Grid>
-      <Grid item>
-        <NavbarSection id='#contact' text='// contact' num='05' hovered={hovered} setHovered={setHovered} isDown={isDown} />
-      </Grid>
-    </Grid>
+    </motion.div>
   );
 }
 

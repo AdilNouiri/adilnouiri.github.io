@@ -1,6 +1,7 @@
 import { Grid } from '@mui/material';
 import { useEffect, useState } from 'react';
 import { competencesLogo } from '../Datas/Datas.js';
+import { motion } from 'framer-motion';
 
 const Title = ({ title1, title2, windowWidth }) => {
 
@@ -18,16 +19,22 @@ const Title = ({ title1, title2, windowWidth }) => {
 
   return (
     <Grid item>
-      <Grid item>
-        <span style={textTitle}>
-          {title1}
-        </span>
-      </Grid>
-      <Grid item style={{ paddingBottom: '20px', marginTop: '-20px' }}>
-        <span style={textTitle}>
-          {title2}
-        </span>
-      </Grid>
+      <motion.div
+        initial={{ opacity: 0, y: 50 }}
+        animate={{ opacity: 1, y: 0 }}
+        transition={{ duration: 0.8 }}
+      >
+        <Grid item>
+          <span style={textTitle}>
+            {title1}
+          </span>
+        </Grid>
+        <Grid item style={{ paddingBottom: '20px', marginTop: '-20px' }}>
+          <span style={textTitle}>
+            {title2}
+          </span>
+        </Grid>
+      </motion.div>
     </Grid>
   );
 };
@@ -75,56 +82,66 @@ const FilterProjects = ({ datas, sectionSelected, setSectionSelected }) => {
     };
 
     return (
-      <Grid container direction='row'
-        onMouseEnter={() => setMouseOn(data.categorie)}
-        onMouseLeave={() => setMouseOn('')}
-        onClick={() => setSectionSelected(data.categorie)}>
-        <Grid item>
-          <span style={clickableTextStyle(data.categorie)}>
-            {data.text}
-          </span>
+      <motion.div
+        whileHover={{ scale: 1.05 }}
+        transition={{ type: "spring", stiffness: 400, damping: 10 }}
+      >
+        <Grid container direction='row'
+          onMouseEnter={() => setMouseOn(data.categorie)}
+          onMouseLeave={() => setMouseOn('')}
+          onClick={() => setSectionSelected(data.categorie)}>
+          <Grid item>
+            <span style={clickableTextStyle(data.categorie)}>
+              {data.text}
+            </span>
+          </Grid>
+          <Grid item style={{ marginTop: '-7px' }}>
+            <span style={numberTextStyle(data.categorie)}>
+              {getNumberProjects(data.categorie)}
+            </span>
+          </Grid>
         </Grid>
-        <Grid item style={{ marginTop: '-7px' }}>
-          <span style={numberTextStyle(data.categorie)}>
-            {getNumberProjects(data.categorie)}
-          </span>
-        </Grid>
-      </Grid>
+      </motion.div>
     )
   };
 
   return (
-    <Grid container direction='row'>
-      <Grid item style={{ paddingRight: '15px' }}>
-        <span style={basicTextStyle}>
-          Filter by
-        </span>
+    <motion.div
+      initial={{ opacity: 0, y: 20 }}
+      animate={{ opacity: 1, y: 0 }}
+      transition={{ delay: 0.3, duration: 0.8 }}
+    >
+      <Grid container direction='row'>
+        <Grid item style={{ paddingRight: '15px' }}>
+          <span style={basicTextStyle}>
+            Filter by
+          </span>
+        </Grid>
+        <Grid item style={{ paddingRight: '3px' }}>
+          <ClickableText data={datas[0]} />
+        </Grid>
+        <Grid item style={{ paddingRight: '15px' }}>
+          <span style={basicTextStyle}>
+            /
+          </span>
+        </Grid>
+        <Grid item style={{ paddingRight: '3px' }}>
+          <ClickableText data={datas[1]} />
+        </Grid>
+        <Grid item style={{ paddingRight: '15px' }}>
+          <span style={basicTextStyle}>
+            /
+          </span>
+        </Grid>
+        <Grid item style={{ paddingRight: '3px' }}>
+          <ClickableText data={datas[2]} />
+        </Grid>
       </Grid>
-      <Grid item style={{ paddingRight: '3px' }}>
-        <ClickableText data={datas[0]} />
-      </Grid>
-      <Grid item style={{ paddingRight: '15px' }}>
-        <span style={basicTextStyle}>
-          /
-        </span>
-      </Grid>
-      <Grid item style={{ paddingRight: '3px' }}>
-        <ClickableText data={datas[1]} />
-      </Grid>
-      <Grid item style={{ paddingRight: '15px' }}>
-        <span style={basicTextStyle}>
-          /
-        </span>
-      </Grid>
-      <Grid item style={{ paddingRight: '3px' }}>
-        <ClickableText data={datas[2]} />
-      </Grid>
-    </Grid>
+    </motion.div>
   );
 }
 
 const Project = ({ data, projectSelected, windowWidth }) => {
-
   const [isMouseOnShowProject, setIsMouseOnShowProject] = useState(false);
 
   const titleStyle = {
@@ -145,7 +162,7 @@ const Project = ({ data, projectSelected, windowWidth }) => {
 
   const showProjectStyle = {
     color: isMouseOnShowProject ? "#66d9ed" : "#efefef",
-    cursor: 'pointer',
+    cursor: data.inprogress ? 'default' : 'pointer',
     fontSize: "17px",
     marginBottom: "5px",
     lineHeight: "1.1",
@@ -153,109 +170,142 @@ const Project = ({ data, projectSelected, windowWidth }) => {
   };
 
   return (
-    <Grid container direction='column' style={{width: windowWidth <= 438 ? '80vw' : '380px' }}>
-      <Grid item style={{ position: 'relative' }}>
-        <img
-          src={data.imageSrc}
-          style={{
-            borderRadius: '7px',
-            width: windowWidth <= 438 ? '80vw' : '380px',
-            height: '285px',
-            cursor: 'pointer',
-            filter: data.inprogress ? 'grayscale(100%)' : 'none',
-            opacity: data.inprogress ? 0.4 : 1 
-          }}
-          alt="ImageProject"
-        />
-        {data.inprogress && (
-          <span style={{
-            position: 'absolute',
-            top: '50%',
-            left: '50%',
-            transform: 'translate(-50%, -50%)',
-            color: 'white',
-            fontSize: '24px',
-            fontWeight: 'bold',
-            textShadow: '1px 1px 3px rgba(0, 0, 0, 0.7)',
-            pointerEvents: 'none'
-          }}>
-            IN PROGRESS
-          </span>
-        )}
-      </Grid>
-
-      <Grid container direction='column'
-        style={{
-          padding: '30px',
-          paddingBottom: '10px',
-          marginTop: '-7px',
-          height: '200px',
-          borderBottomLeftRadius: '5px',
-          borderBottomRightRadius: '5px',
-          backgroundColor: "#262626"}}>
-        <Grid item style={{ marginBottom: '-2px', width: '100%', overflow: "hidden", textOverflow: "ellipsis", whiteSpace: "nowrap", color: "#efefef", fontSize: "17px"  }}>
-          <span style={titleStyle}>
-            {data.title}
-          </span>
-        </Grid>
-        { projectSelected !== data.title ? (
-          <Grid item>
-          <span style={typeStyle}>
-            {data.categorie}
-          </span>
-        </Grid>
-        ) : (
-          <Grid container direction='row' style={{ alignItems: 'center' }}>
-            <Grid item
+    <motion.div
+      initial={{ opacity: 0, y: 50 }}
+      animate={{ opacity: 1, y: 0 }}
+      whileHover={{ y: -10 }}
+      transition={{ type: "spring", stiffness: 300, damping: 20 }}
+    >
+      <Grid container direction='column' style={{width: windowWidth <= 438 ? '80vw' : '380px' }}>
+        <Grid item style={{ position: 'relative' }}>
+          <motion.img
+            src={data.imageSrc}
+            style={{
+              borderRadius: '7px',
+              width: windowWidth <= 438 ? '80vw' : '380px',
+              height: '285px',
+              cursor: 'pointer',
+              filter: data.inprogress ? 'grayscale(100%)' : 'none',
+              opacity: data.inprogress ? 0.4 : 1 
+            }}
+            alt="ImageProject"
+            whileHover={{ scale: 1.02 }}
+            transition={{ duration: 0.3 }}
+          />
+          {data.inprogress && (
+            <motion.span
+              initial={{ opacity: 0 }}
+              animate={{ opacity: 1 }}
+              transition={{ duration: 0.5 }}
               style={{
-                paddingRight: '10px',
+                position: 'absolute',
+                top: '50%',
+                left: '50%',
+                transform: 'translate(-50%, -50%)',
+                color: 'white',
+                fontSize: '24px',
+                fontWeight: 'bold',
+                textShadow: '1px 1px 3px rgba(0, 0, 0, 0.7)',
+                pointerEvents: 'none'
               }}
-              onMouseEnter={() => {
-                if (!data.inprogress)
-                  setIsMouseOnShowProject(true)
-              }}
-              onMouseLeave={() => setIsMouseOnShowProject(false)}
-              onClick={() => {
-                if (!data.inprogress) {
-                  window.open(data.link, '_blank');
-                }
-              }}>
-              <span style={showProjectStyle}>
-                {data.inprogress ? 'In Progress' : 'Show project'}
+            >
+              IN PROGRESS
+            </motion.span>
+          )}
+        </Grid>
+
+        <motion.div
+          initial={{ opacity: 0 }}
+          animate={{ opacity: 1 }}
+          transition={{ delay: 0.2 }}
+        >
+          <Grid container direction='column'
+            style={{
+              padding: '30px',
+              paddingBottom: '10px',
+              marginTop: '-7px',
+              height: '200px',
+              borderBottomLeftRadius: '5px',
+              borderBottomRightRadius: '5px',
+              backgroundColor: "#262626"
+            }}
+          >
+            <Grid item style={{ marginBottom: '-2px', width: '100%', overflow: "hidden", textOverflow: "ellipsis", whiteSpace: "nowrap", color: "#efefef", fontSize: "17px"  }}>
+              <span style={titleStyle}>
+                {data.title}
               </span>
             </Grid>
-            <Grid item style={{ color: 'grey', backgroundColor: 'grey', width: '50px', height: '2px', marginTop: '4px' }} />
-          </Grid>
-        )}
-       <Grid container direction='row' style={{paddingTop: '20px'}}>
-        {data.langages.map((langage, index) => {
-          const langageObjet = competencesLogo.find(item => item.langage === langage);
-          const defaultImg = "data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9IjAgMCA0MCA0MCI+PGNpcmNsZSBjeD0iMjAiIGN5PSIyMCIgcj0iMjAiIGZpbGw9IiNjY2MiLz48dGV4dCB4PSIyMCIgeT0iMjYiIGZvbnQtc2l6ZT0iMjQiIHRleHQtYW5jaG9yPSJtaWRkbGUiIGZpbGw9IiMwMDAiIGZvbnQtZmFtaWx5PSJBcmlhbCI+PzwvdGV4dD48L3N2Zz4=";
+            {projectSelected !== data.title ? (
+              <Grid item>
+                <span style={typeStyle}>
+                  {data.categorie}
+                </span>
+              </Grid>
+            ) : (
+              <Grid container direction='row' style={{ alignItems: 'center' }}>
+                <Grid item
+                  style={{
+                    paddingRight: '10px',
+                  }}
+                  onMouseEnter={() => {
+                    if (!data.inprogress)
+                      setIsMouseOnShowProject(true)
+                  }}
+                  onMouseLeave={() => setIsMouseOnShowProject(false)}
+                  onClick={() => {
+                    if (!data.inprogress) {
+                      window.open(data.link, '_blank');
+                    }
+                  }}>
+                  <motion.span
+                    style={showProjectStyle}
+                    whileHover={{ x: 5 }}
+                    transition={{ type: "spring", stiffness: 400, damping: 10 }}
+                  >
+                    {data.inprogress ? 'In Progress' : 'Show project'}
+                  </motion.span>
+                </Grid>
+                <Grid item style={{ color: 'grey', backgroundColor: 'grey', width: '50px', height: '2px', marginTop: '4px' }} />
+              </Grid>
+            )}
+            <Grid container direction='row' style={{paddingTop: '20px'}}>
+              {data.langages.map((langage, index) => {
+                const langageObjet = competencesLogo.find(item => item.langage === langage);
+                const defaultImg = "data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9IjAgMCA0MCA0MCI+PGNpcmNsZSBjeD0iMjAiIGN5PSIyMCIgcj0iMjAiIGZpbGw9IiNjY2MiLz48dGV4dCB4PSIyMCIgeT0iMjYiIGZvbnQtc2l6ZT0iMjQiIHRleHQtYW5jaG9yPSJtaWRkbGUiIGZpbGw9IiMwMDAiIGZvbnQtZmFtaWx5PSJBcmlhbCI+PzwvdGV4dD48L3N2Zz4=";
 
-          return (
-            <Grid 
-              item 
-              key={index}
-              style={{ paddingRight: index === data.langages.length - 1 ? '0px' : '10px' }}
-            >
-              <img
-                src={langageObjet ? langageObjet.logo : defaultImg}
-                style={{ width: "40px", height: '40px', borderRadius: '50%' }}
-                alt="ImageCompetence"
-                onError={(e) => {
-                  e.currentTarget.onerror = null;
-                  e.currentTarget.src = defaultImg;
-                }}
-              />
+                return (
+                  <motion.div
+                    key={index}
+                    initial={{ opacity: 0, scale: 0 }}
+                    animate={{ opacity: 1, scale: 1 }}
+                    transition={{ delay: index * 0.1 }}
+                  >
+                    <Grid 
+                      item 
+                      style={{ paddingRight: index === data.langages.length - 1 ? '0px' : '10px' }}
+                    >
+                      <motion.img
+                        src={langageObjet ? langageObjet.logo : defaultImg}
+                        style={{ width: "40px", height: '40px', borderRadius: '50%' }}
+                        alt="ImageCompetence"
+                        whileHover={{ scale: 1.1 }}
+                        transition={{ type: "spring", stiffness: 300, damping: 15 }}
+                        onError={(e) => {
+                          e.currentTarget.onerror = null;
+                          e.currentTarget.src = defaultImg;
+                        }}
+                      />
+                    </Grid>
+                  </motion.div>
+                );
+              })}
             </Grid>
-          );
-        })}
+          </Grid>
+        </motion.div>
       </Grid>
-
-      </Grid>
-    </Grid>
+    </motion.div>
   );
-}
+};
 
 const ProjectsList = ({ datas, sectionSelected, windowWidth }) => {
 

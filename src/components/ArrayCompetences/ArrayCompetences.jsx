@@ -5,6 +5,8 @@ import DeveloperModeIcon from '@mui/icons-material/DeveloperMode';
 import SettingsSystemDaydreamIcon from '@mui/icons-material/SettingsSystemDaydream';
 import DeleteIcon from '@mui/icons-material/Delete';
 import { useEffect, useState } from 'react';
+import { motion, AnimatePresence } from 'framer-motion';
+import { competenceLogos } from '../../Datas/Datas';
 
 const TitleField = ({ icon, title1, title2, bandColor, bandSize }) => {
   const titleStyle = {
@@ -119,26 +121,120 @@ const Icon = ({ type }) => {
   );
 };
 
-const CompetenceBox = ({ dataBox, isLittle }) => {
+const CompetenceLogos = ({ type }) => {
+  const logos = competenceLogos[type] || [];
+
   return (
-    <Grid container direction='column'
+    <AnimatePresence>
+      <motion.div
+        initial={{ opacity: 0 }}
+        animate={{ opacity: 1 }}
+        exit={{ opacity: 0 }}
+        style={{
+          position: 'absolute',
+          top: 0,
+          left: 0,
+          right: 0,
+          bottom: 0,
+          display: 'flex',
+          flexWrap: 'wrap',
+          justifyContent: 'center',
+          alignItems: 'center',
+          gap: '10px',
+          padding: '10px',
+          backgroundColor: 'rgba(0, 0, 0, 0.2)',
+          borderRadius: '10px',
+          zIndex: 2
+        }}
+      >
+        {logos.map((logo, index) => (
+          <motion.div
+            key={logo.name}
+            initial={{ scale: 0, rotate: -180 }}
+            animate={{ scale: 1, rotate: 0 }}
+            transition={{ 
+              delay: index * 0.1,
+              type: "spring",
+              stiffness: 260,
+              damping: 20
+            }}
+            style={{
+              width: '40px',
+              height: '40px',
+              display: 'flex',
+              justifyContent: 'center',
+              alignItems: 'center'
+            }}
+          >
+            <img 
+              src={logo.src} 
+              alt={logo.name}
+              style={{ 
+                width: '100%',
+                height: '100%',
+                objectFit: 'contain'
+              }}
+            />
+          </motion.div>
+        ))}
+      </motion.div>
+    </AnimatePresence>
+  );
+};
+
+const CompetenceBox = ({ dataBox, isLittle, index }) => {
+  const [isHovered, setIsHovered] = useState(false);
+
+  return (
+    <motion.div
+      whileHover={{
+        rotateX: 10,
+        rotateY: 15,
+        scale: 1.05,
+        x: -20,
+        transition: { 
+          type: "spring",
+          stiffness: 300,
+          damping: 20
+        }
+      }}
       style={{
-        border: '1px solid white',
-        paddingTop: '40px',
-        paddingBottom: '40px',
-        paddingLeft: '30px',
-        paddingRight: '30px',
-        maxWidth: isLittle ? '362px' : '650px',
-        minWidth: '260px',
-        boxSizing: 'border-box',
-      }}>
-      <Grid item>
-        <TitleField icon={<Icon type={dataBox.type} />} title1={dataBox.title1} title2={dataBox.title2} bandColor={dataBox.bandColor} bandSize={dataBox.bandSize} />
+        perspective: "1000px",
+        transformStyle: "preserve-3d",
+        position: 'relative',
+        width: '100%',
+        height: '100%'
+      }}
+      onHoverStart={() => setIsHovered(true)}
+      onHoverEnd={() => setIsHovered(false)}
+    >
+      <Grid container direction='column'
+        style={{
+          border: '1px solid white',
+          paddingTop: '40px',
+          paddingBottom: '40px',
+          paddingLeft: '30px',
+          paddingRight: '30px',
+          maxWidth: isLittle ? '362px' : '650px',
+          minWidth: '260px',
+          width: '100%',
+          height: '100%',
+          boxSizing: 'border-box',
+          backgroundColor: 'rgba(255, 255, 255, 0.05)',
+          backdropFilter: 'blur(10px)',
+          boxShadow: '0 8px 32px 0 rgba(31, 38, 135, 0.37)',
+          borderRadius: '10px',
+          transform: 'translateZ(0)'
+        }}>
+        <Grid item>
+          <TitleField icon={<Icon type={dataBox.type} />} title1={dataBox.title1} title2={dataBox.title2} bandColor={dataBox.bandColor} bandSize={dataBox.bandSize} />
+        </Grid>
+        <Grid item>
+          <DescriptionField description={dataBox.description} />
+        </Grid>
       </Grid>
-      <Grid item>
-        <DescriptionField description={dataBox.description} />
-      </Grid>
-    </Grid>
+      {isHovered && <CompetenceLogos type={dataBox.type} />}
+    </motion.div>
   );
 }
 const QuoteBox = ({ quote, credits, isLittle }) => {
@@ -209,16 +305,16 @@ const ArrayCompetences = ({ data }) => {
   return (
     <Grid container style={{ justifyContent: 'center' }}>
       <Grid item>
-        <CompetenceBox dataBox={data[0]} isLittle={isLittle} />
+        <CompetenceBox dataBox={data[0]} isLittle={isLittle} index={0} />
       </Grid>
       <Grid item>
-        <CompetenceBox dataBox={data[1]} isLittle={isLittle}/>
+        <CompetenceBox dataBox={data[1]} isLittle={isLittle} index={1} />
       </Grid>
       <Grid item>
-        <CompetenceBox dataBox={data[2]} isLittle={isLittle}/>
+        <CompetenceBox dataBox={data[2]} isLittle={isLittle} index={2} />
       </Grid>
       <Grid item>
-        <CompetenceBox dataBox={data[3]} isLittle={isLittle}/>
+        <CompetenceBox dataBox={data[3]} isLittle={isLittle} index={3} />
       </Grid>
       {isWrapped && (
         <Grid item>

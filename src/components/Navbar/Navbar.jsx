@@ -27,7 +27,6 @@ const CompleteNavbar = () => {
 };
 
 const WrappedNavbar = ({ isLogoEnable, setIsOpenMenu, isDown }) => {
-
   const openMenu = () => {
     setIsOpenMenu(true);
   };
@@ -60,7 +59,7 @@ const WrappedNavbar = ({ isLogoEnable, setIsOpenMenu, isDown }) => {
         style={{
           paddingRight: '30px',
           cursor: 'pointer',
-          marginTop: isDown ? '-30px' : '0px'
+          marginTop: isDown ? '-30px' : '13px'
         }}>
         <MenuNavbar />
       </Grid>
