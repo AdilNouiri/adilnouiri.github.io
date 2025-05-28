@@ -228,24 +228,29 @@ const Project = ({ data, projectSelected, windowWidth }) => {
           </Grid>
         )}
        <Grid container direction='row' style={{paddingTop: '20px'}}>
-          {data.langages.map((langage, index) => {
+        {data.langages.map((langage, index) => {
+          const langageObjet = competencesLogo.find(item => item.langage === langage);
+          const defaultImg = "data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9IjAgMCA0MCA0MCI+PGNpcmNsZSBjeD0iMjAiIGN5PSIyMCIgcj0iMjAiIGZpbGw9IiNjY2MiLz48dGV4dCB4PSIyMCIgeT0iMjYiIGZvbnQtc2l6ZT0iMjQiIHRleHQtYW5jaG9yPSJtaWRkbGUiIGZpbGw9IiMwMDAiIGZvbnQtZmFtaWx5PSJBcmlhbCI+PzwvdGV4dD48L3N2Zz4=";
 
-            const langageObjet = competencesLogo.find(item => item.langage === langage);
-
-            return (
-              <Grid item key={index}
-                style={{
-                  paddingRight: index === data.langages.length ? '0px' : '10px'
-                }}>
-                  <img
-                    src={langageObjet ? langageObjet.logo : ''}
-                    style={{ width: "40px", height: '40px', borderRadius: '50%' }}
-                    alt="ImageCompetence"
-                  />
-              </Grid>
-            );
-          })}
-        </Grid>
+          return (
+            <Grid 
+              item 
+              key={index}
+              style={{ paddingRight: index === data.langages.length - 1 ? '0px' : '10px' }}
+            >
+              <img
+                src={langageObjet ? langageObjet.logo : defaultImg}
+                style={{ width: "40px", height: '40px', borderRadius: '50%' }}
+                alt="ImageCompetence"
+                onError={(e) => {
+                  e.currentTarget.onerror = null;
+                  e.currentTarget.src = defaultImg;
+                }}
+              />
+            </Grid>
+          );
+        })}
+      </Grid>
 
       </Grid>
     </Grid>
