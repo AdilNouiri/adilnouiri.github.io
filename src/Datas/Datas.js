@@ -105,7 +105,7 @@ export const workDatas = [
         },
         {
           title: 'Raytracer',
-          imageSrc: 'https://image.noelshack.com/fichiers/2023/48/2/1701165776-basic-scene-plane-sphere.jpg',
+          imageSrc: 'https://github.com/AdilNouiri/Raytracer/raw/main/assets/Readme/basic_scene_plane_sphere.jpg',
           categorie: 'Epitech',
           langages: ['C'],
           link: 'https://github.com/AdilNouiri/Raytracer'
